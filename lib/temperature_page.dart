@@ -49,8 +49,9 @@ class _HomePageState extends State<HomePage> {
                     onPressed: () async {
                       Location location = Location();
                       await location.getCurrentPosition();
+                      var currentPosition;
                       String url =
-                          'https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&appid=apiKey&units=metric';
+                          "https://api.openweathermap.org/data/2.5/weather?lat=${currentPosition.latitude}&lon=${currentPosition.longitude}&appid=dba425d8eb7ed13463cad0ae0b33e1d9&units=metric";
                       Weather currentWeather = Weather(url);
                       var weatherData = await currentWeather.getWeather();
                       setState(
